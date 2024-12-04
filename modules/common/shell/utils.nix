@@ -33,6 +33,8 @@ in {
                 tealdeer # Cheatsheets
                 tree # View directory hierarchy
                 unzip # Extract zips
+                broot # TUI file manager
+                termscp # TUI file transfer client
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
