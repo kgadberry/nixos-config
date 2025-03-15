@@ -29,7 +29,7 @@
 
             globals = rec {
                 user = "kgadberry";
-                fullName = "Kaye Gadberry";
+                fullName = "K. Gadberry";
                 gitName = fullName;
                 gitEmail = "1781520+kgadberry@users.noreply.github.com";
                 dotfilesRepo = "github:kgadberry/dotfiles";
