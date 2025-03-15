@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: 
+{ config, pkgs, lib, ... }:
 {
     config = lib.mkIf (pkgs.stdenv.isLinux && config.wsl.enable) {
         # Replace config directory with our repo, since it sources from config on every launch
@@ -6,5 +6,8 @@
             rm -rf /etc/nixos
             ln --symbolic --no-dereference --force ${config.dotfilesPath} /etc/nixos
         '';
+
+        # Needed to run dynamically linked applications (like vscode server)
+        programs.nix-ld.enable = true;
     };
 }
