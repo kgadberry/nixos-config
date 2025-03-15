@@ -1,7 +1,10 @@
 { config, lib, pkgs, ... }:
 
 {
-    imports = [ ./shell ];
+    imports = [ 
+        ./shell 
+        ./dev
+    ];
 
     options = {
         user = lib.mkOption {
@@ -47,9 +50,9 @@
     # Set stateVersion for root and default user
     # Probably shouldn't need to be changed
     
-    config.home-manager.users.root.home.stateVersion = "24.05";
+    config.home-manager.users.root.home.stateVersion = "24.11";
     config.home-manager.users.${config.user}.home = {
-        stateVersion = "24.05";
+        stateVersion = "24.11";
 
         # Enable the experimental features
         sessionVariables = {
