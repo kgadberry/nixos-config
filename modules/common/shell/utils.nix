@@ -35,7 +35,8 @@ in {
                 unzip # Extract zips
                 broot # TUI file manager
                 termscp # TUI file transfer client
-                neofetch # System info                
+                neofetch # System info
+                wget # Download files
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
