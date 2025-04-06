@@ -4,7 +4,7 @@
     # Other flakes we want to pull from
     inputs = {
         # Used for system packages
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
 
          # Used for Windows Subsystem for Linux compatibility
         wsl.url = "github:nix-community/NixOS-WSL";
@@ -14,7 +14,7 @@
 
         # Used for user packages and dotfiles
         home-manager = {
-        url = "github:nix-community/home-manager/master";
+        url = "github:nix-community/home-manager/release-24.11";
         inputs.nixpkgs.follows =
             "nixpkgs"; # Use system packages list where available
         };

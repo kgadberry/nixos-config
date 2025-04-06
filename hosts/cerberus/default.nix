@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem {
         wsl.nixosModules.wsl
         home-manager.nixosModules.home-manager
         {
+            system.stateVersion = "24.11";
             networking = {
                 hostName = "cerberus";
                 # TODO: make tailscale integration more declarative?
@@ -26,6 +27,7 @@ nixpkgs.lib.nixosSystem {
             nix.registry.nixpkgs.flake = nixpkgs;
             identityFile = "/home/${globals.user}/.ssh/id_ed25519";
             gui.enable = false;
+            # TODO: fix this
             passwordHash = nixpkgs.lib.fileContents ../../password.sha512;
             wsl = {
                 enable = true;
