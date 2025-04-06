@@ -37,6 +37,7 @@ in {
                 termscp # TUI file transfer client
                 neofetch # System info
                 wget # Download files
+                termscp # TUI file transfer client
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
