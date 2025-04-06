@@ -38,6 +38,7 @@ in {
                 neofetch # System info
                 wget # Download files
                 termscp # TUI file transfer client
+                dos2unix # Convert line endings
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
