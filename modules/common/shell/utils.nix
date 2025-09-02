@@ -34,10 +34,9 @@ in {
                 tree # View directory hierarchy
                 unzip # Extract zips
                 broot # TUI file manager
-                termscp # TUI file transfer client
                 neofetch # System info
                 wget # Download files
-                termscp # TUI file transfer client
+                mc # Better than termscp
                 dos2unix # Convert line endings
             ];
 
