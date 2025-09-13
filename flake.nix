@@ -5,6 +5,7 @@
     inputs = {
         # Used for system packages
         nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
          # Used for Windows Subsystem for Linux compatibility
         wsl.url = "github:nix-community/NixOS-WSL";

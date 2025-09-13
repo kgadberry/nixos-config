@@ -6,7 +6,8 @@ with inputs;
 
 nixpkgs.lib.nixosSystem {
     system = "x86_64-linux";
-    specialArgs = { };
+    # nixpkgs-unstable exposes legacyPackages for system pkgsets
+    specialArgs = { unstable = inputs.nixpkgs-unstable.legacyPackages.x86_64-linux; };
     modules = [
         ../../modules/common
         ../../modules/nixos

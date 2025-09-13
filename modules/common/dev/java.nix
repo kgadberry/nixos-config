@@ -1,9 +1,9 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, unstable, ... }: {
 
     environment.systemPackages = with pkgs; [
         jdk21_headless
         maven
-        gradle
+        unstable.gradle_9
     ];
 
 }
