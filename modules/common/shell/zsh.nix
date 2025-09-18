@@ -45,7 +45,7 @@
                 egrep = "egrep --color=auto";
             };
 
-            initExtra = ''
+            initContent = ''
                 . "$HOME/.nix-profile/etc/profile.d/hm-session-vars.sh" # Load session variables
 
                 # Fix home/end in ptyxis

@@ -2,7 +2,7 @@
 
     home-manager.users.${config.user} = {
         
-        programs.zsh.initExtra = ''
+        programs.zsh.initContent = ''
                 eval "$(starship init zsh)" # Enable starship prompt
             '';
 
