@@ -32,6 +32,7 @@ in {
                 sd # sed
                 tealdeer # Cheatsheets
                 tree # View directory hierarchy
+                zip # Create zips
                 unzip # Extract zips
                 broot # TUI file manager
                 neofetch # System info
