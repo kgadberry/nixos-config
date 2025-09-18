@@ -8,5 +8,6 @@
         ./git.nix       # git integration in the shell
         ./starship.nix  # setting up the starship prompt
         ./nix-ld.nix    # setting up LD_LIBRARY_PATH for dynamically linked applications
+        ./neovim.nix    # neovim configuration and integration with the shell
     ];
 }
