@@ -35,7 +35,6 @@ nixpkgs.lib.nixosSystem {
                 wslConf.automount.root = "/mnt";
                 defaultUser = globals.user;
                 startMenuLaunchers = true;
-                nativeSystemd = true;
                 wslConf.network.generateResolvConf = false; # disabled because it breaks tailscale
                 interop.includePath = true; # include Windows PATH
             };
