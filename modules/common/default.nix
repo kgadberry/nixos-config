@@ -4,6 +4,7 @@
     imports = [ 
         ./shell 
         ./dev
+        ./update_collect-garbage.nix
     ];
 
     options = {
