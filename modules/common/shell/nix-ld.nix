@@ -8,7 +8,7 @@
 
         # Caution: This can cause issues with some applications that expect a different LD_LIBRARY_PATH, 
         # but is needed for python modules with native extensions (like numpy) to work
-        programs.zsh.initExtra = ''
+        programs.zsh.initContent = ''
             # Prefer system libraries by default to avoid incompatible lib versions
             # (e.g. libmount MOUNT_2_40 conflicts). Append nix-ld libs so system
             # libraries remain first for tools like gradle.
