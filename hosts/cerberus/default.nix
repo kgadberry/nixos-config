@@ -15,7 +15,7 @@ nixpkgs.lib.nixosSystem {
         globals
         wsl.nixosModules.wsl
         home-manager.nixosModules.home-manager
-        {
+        ({ config, pkgs, lib, ... }: {
             system.stateVersion = "25.05";
             networking = {
                 hostName = "cerberus";
@@ -26,6 +26,8 @@ nixpkgs.lib.nixosSystem {
             nixpkgs.overlays = overlays;
             # set registry to flake packages, used for nix X commands
             nix.registry.nixpkgs.flake = nixpkgs;
+            # Allow the claude-code package (proprietary) while keeping others disallowed
+            nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "claude-code" ];
             identityFile = "/home/${globals.user}/.ssh/id_ed25519";
             gui.enable = false;
             # TODO: fix this
@@ -38,6 +40,8 @@ nixpkgs.lib.nixosSystem {
                 wslConf.network.generateResolvConf = false; # disabled because it breaks tailscale
                 interop.includePath = true; # include Windows PATH
             };
-        }
+            # Add claude-code package to system packages (provided by overlay)
+            environment.systemPackages = with pkgs; [ claude-code ];
+        })
     ];
 }
