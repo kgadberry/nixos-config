@@ -7,6 +7,7 @@
             pyserial
             matplotlib
             pandas
+            scipy
         ]))
     ];
 
