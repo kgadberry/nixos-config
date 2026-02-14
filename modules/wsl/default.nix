@@ -8,5 +8,8 @@
             rm -rf /etc/nixos
             ln --symbolic --no-dereference --force ${config.dotfilesPath} /etc/nixos
         '';
+
+        # Enable usbip
+        wsl.usbip.enable = true;
     };
 }
