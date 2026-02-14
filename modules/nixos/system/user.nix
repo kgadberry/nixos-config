@@ -26,6 +26,7 @@
 
             extraGroups = [
                 "wheel" # Sudo privileges
+                "dialout" # For usb tty without root
             ];
 
         };
