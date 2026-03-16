@@ -39,6 +39,7 @@ in {
                 wget # Download files
                 mc # Better than termscp
                 dos2unix # Convert line endings
+                usbutils # For lsusb, etc
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
