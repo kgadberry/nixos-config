@@ -11,5 +11,10 @@
 
         # Enable usbip
         wsl.usbip.enable = true;
+
+        # usbipd HOWTO from admin powershell:
+        # -  usbipd list
+        # -  usbipd bind --busid #-#
+        # -  usbipd attach --wsl --busid #-#
     };
 }
