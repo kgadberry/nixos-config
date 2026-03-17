@@ -3,8 +3,7 @@
     environment.systemPackages = with pkgs; [
         libgcc
         gnat
-	gnumake
+	    gnumake
         cmake
     ];
-
 }
