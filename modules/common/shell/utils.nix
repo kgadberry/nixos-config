@@ -31,15 +31,17 @@ in {
                 ripgrep # grep
                 sd # sed
                 tealdeer # Cheatsheets
-                tree # View directory hierarchy
-                zip # Create zips
-                unzip # Extract zips
-                broot # TUI file manager
+                tree     # View directory hierarchy
+                zip      # Create zips
+                unzip    # Extract zips
+                broot    # TUI file manager
                 neofetch # System info
-                wget # Download files
-                mc # Better than termscp
+                wget     # Download files
+                mc       # Better than termscp
                 dos2unix # Convert line endings
                 usbutils # For lsusb, etc
+                nmap     # Network exploration
+                tcpdump  # Packet sniffer
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
