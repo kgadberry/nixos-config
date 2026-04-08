@@ -4,6 +4,7 @@
     imports = [ 
         ./shell 
         ./dev
+        ./design
         ./update_collect-garbage.nix
     ];
 
@@ -51,9 +52,9 @@
     # Set stateVersion for root and default user
     # Probably shouldn't need to be changed
     
-    config.home-manager.users.root.home.stateVersion = "25.05";
+    config.home-manager.users.root.home.stateVersion = "25.11";
     config.home-manager.users.${config.user}.home = {
-        stateVersion = "25.05";
+        stateVersion = "25.11";
 
         # Enable the experimental features
         sessionVariables = {
