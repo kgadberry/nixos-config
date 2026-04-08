@@ -24,9 +24,11 @@
 
             programs.git = {
                 enable = true;
-                userName = config.gitName;
-                userEmail = config.gitEmail;
-                extraConfig = {
+                settings = {
+                    user = {
+                        name = config.gitName;
+                        email = config.gitEmail;
+                    };
                     pager.branch = "false";
                     safe.directory = config.dotfilesPath;
                     pull.ff = "only";

@@ -5,7 +5,6 @@
         nodePackages.yarn
         nodePackages.npm
         nodePackages.typescript
-        nodePackages.ts-node
     ];
 
 }

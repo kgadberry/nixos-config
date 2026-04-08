@@ -16,7 +16,7 @@ nixpkgs.lib.nixosSystem {
         wsl.nixosModules.wsl
         home-manager.nixosModules.home-manager
         ({ config, pkgs, lib, ... }: {
-            system.stateVersion = "25.05";
+            system.stateVersion = "25.11";
             networking = {
                 hostName = "cerberus";
                 # TODO: make tailscale integration more declarative?
