@@ -3,6 +3,7 @@
     environment.systemPackages = with pkgs; [
         gcc-arm-embedded
         dfu-util
+        stm32flash
     ];
 
     # udev rule for STM32
