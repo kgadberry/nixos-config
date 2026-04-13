@@ -5,5 +5,6 @@
         gnat
 	    gnumake
         cmake
+        gdb
     ];
 }
