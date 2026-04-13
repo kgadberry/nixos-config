@@ -73,7 +73,7 @@
         # Set git configuration for root
         root.programs.git = {
             enable = true;
-            extraConfig.safe.directory = config.dotfilesPath;
+            settings.safe.directory = config.dotfilesPath;
         };
         
     };
