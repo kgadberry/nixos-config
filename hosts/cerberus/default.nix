@@ -26,6 +26,10 @@ nixpkgs.lib.nixosSystem {
             nixpkgs.overlays = overlays;
             # set registry to flake packages, used for nix X commands
             nix.registry.nixpkgs.flake = nixpkgs;
+            nix.registry.dotfiles.to = {
+                type = "path";
+                path = "/home/${globals.user}/dev/personal/dotfiles";
+            };
             # Allow the claude-code package (proprietary) while keeping others disallowed
             nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "claude-code" ];
             identityFile = "/home/${globals.user}/.ssh/id_ed25519";

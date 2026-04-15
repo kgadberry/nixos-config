@@ -42,7 +42,7 @@
 
             # System types to support
             supportedSystems = 
-                [ "x86-64_linux" "aarch64-linux" ];
+                [ "x86_64-linux" "aarch64-linux" ];
 
             # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
             forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
@@ -56,6 +56,14 @@
             nixosConfigurations = {
                 cerberus = import ./hosts/cerberus { inherit inputs globals overlays; };
             };
+
+            # Development shells - see modules/common/dev/cpp.nix for configuration
+            devShells = forAllSystems (system:
+                let
+                    pkgs = nixpkgs.legacyPackages.${system};
+                in {
+                    cpp = import ./modules/common/dev/cpp-shell.nix { inherit pkgs; };
+                });
             
         };
 }
