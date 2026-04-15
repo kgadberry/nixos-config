@@ -37,7 +37,7 @@
                 fullName = "K. Gadberry";
                 gitName = fullName;
                 gitEmail = "1781520+kgadberry@users.noreply.github.com";
-                dotfilesRepo = "github:kgadberry/dotfiles";
+                dotfilesRepo = "github:kgadberry/nixos-config";
             };
 
             # System types to support
@@ -57,12 +57,13 @@
                 cerberus = import ./hosts/cerberus { inherit inputs globals overlays; };
             };
 
-            # Development shells - see modules/common/dev/cpp.nix for configuration
+            # Development shells - currently C++ focused, but structured to be reusable
             devShells = forAllSystems (system:
                 let
                     pkgs = nixpkgs.legacyPackages.${system};
+                    devShell = import ./modules/common/dev/dev-shell.nix { inherit pkgs; };
                 in {
-                    cpp = import ./modules/common/dev/cpp-shell.nix { inherit pkgs; };
+                    default = devShell;
                 });
             
         };
