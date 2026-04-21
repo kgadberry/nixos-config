@@ -61,6 +61,10 @@ in {
                     pager = "less -R"; # Don't auto-exit if one screen
                 };
             };
+
+            programs.eza = {
+                enable = true; # ls replacement
+            };
         };
 
     };
