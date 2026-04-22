@@ -36,8 +36,8 @@
                 z = "zed";
                 hm = "home-manager";
                 cat = "bat";
-            # ls colors
-                ls = "ls --color=auto";
+                ls = "eza";
+
                 dir = "dir --color=auto";
                 vdir = "vdir --color=auto";
                 grep = "grep --color=auto";
