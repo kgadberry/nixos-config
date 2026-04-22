@@ -6,6 +6,7 @@
         ./python.nix
         ./java.nix
         ./nodejs.nix
+        ./agents.nix
     ];
 
     config.home-manager.users.${config.user}.programs.zsh.shellAliases = {

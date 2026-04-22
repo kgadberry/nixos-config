@@ -22,10 +22,9 @@
 
         # Nix language server
         nil.url = "github:oxalica/nil/2024-08-06";
-        # Claude Code flake for claude CLI package
-        claude-code = {
-            url = "github:sadjow/claude-code-nix";
-        };
+
+        # Bleeding-edge llm-agent packages
+        llm-agents.url = "github:numtide/llm-agents.nix";
     };
 
     outputs = { nixpkgs, ... }@inputs:
@@ -46,15 +45,13 @@
 
             # Helper function to generate an attrset '{ x86_64-linux = f "x86_64-linux"; ... }'.
             forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
-            # Expose overlays from inputs so hosts can consume them
-            overlays = [ inputs.claude-code.overlays.default ];
             
         in rec {
 
             # Full system configurations including home-manager
             # nixos-rebuild switch --flake .#cerberus
             nixosConfigurations = {
-                cerberus = import ./hosts/cerberus { inherit inputs globals overlays; };
+                cerberus = import ./hosts/cerberus { inherit inputs globals; };
             };
 
             # Development shells - currently C++ focused, but structured to be reusable
