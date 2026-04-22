@@ -1,8 +1,12 @@
 { config, pkgs, lib, ... }: {
-    services.displayManager.gdm.enable = true;
-    services.desktopManager.gnome.enable = true;
+    options.desktop.gdm.enable = lib.mkEnableOption "GNOME with GDM display manager";
 
-    environment.systemPackages = with pkgs; [
-        gedit
-    ];
+    config = lib.mkIf (config.gui.enable && config.desktop.gdm.enable) {
+        services.displayManager.gdm.enable = true;
+        services.desktopManager.gnome.enable = true;
+
+        environment.systemPackages = with pkgs; [
+            gedit
+        ];
+    };
 }

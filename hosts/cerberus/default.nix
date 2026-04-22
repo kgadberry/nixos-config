@@ -33,7 +33,8 @@ nixpkgs.lib.nixosSystem {
             # Allow the claude-code package (proprietary) while keeping others disallowed
             nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [ "claude-code" ];
             identityFile = "/home/${globals.user}/.ssh/id_ed25519";
-            gui.enable = false;
+            gui.enable = true;
+            desktop.gdm.enable = true;
             # TODO: fix this
             passwordHash = nixpkgs.lib.fileContents ../../password.sha512;
             wsl = {
