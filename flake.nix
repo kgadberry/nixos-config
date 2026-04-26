@@ -22,9 +22,10 @@
 
         # Nix language server
         nil.url = "github:oxalica/nil/2024-08-06";
-
         # Bleeding-edge llm-agent packages
         llm-agents.url = "github:numtide/llm-agents.nix";
+	# nixvim flake input
+	nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     };
 
     outputs = { nixpkgs, ... }@inputs:
