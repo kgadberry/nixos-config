@@ -20,6 +20,7 @@ nixpkgs.lib.nixosSystem {
         home-manager.nixosModules.home-manager
         ({ config, pkgs, lib, ... }: {
             system.stateVersion = "25.11";
+	    home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
             networking = {
                 hostName = "cerberus";
                 # TODO: make tailscale integration more declarative?
@@ -45,6 +46,10 @@ nixpkgs.lib.nixosSystem {
                 wslConf.network.generateResolvConf = false; # disabled because it breaks tailscale
                 interop.includePath = true; # include Windows PATH
             };
+	    virtualisation.docker = {
+                enable = true;
+            };
+	    users.users.${globals.user}.extraGroups = [ "docker" ];
         })
     ];
 }
