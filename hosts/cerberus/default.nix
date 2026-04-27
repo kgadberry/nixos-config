@@ -35,6 +35,7 @@ nixpkgs.lib.nixosSystem {
             };
             identityFile = "/home/${globals.user}/.ssh/id_ed25519";
             gui.enable = true;
+            neovim.enable = true;
             desktop.gdm.enable = true;
             # TODO: fix this
             passwordHash = nixpkgs.lib.fileContents ../../password.sha512;

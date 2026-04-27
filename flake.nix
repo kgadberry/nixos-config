@@ -26,6 +26,12 @@
         llm-agents.url = "github:numtide/llm-agents.nix";
 	# nixvim flake input
 	nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+
+	# ECA Neovim plugin source (non-flake)
+	eca-nvim = {
+	    url = "github:editor-code-assistant/eca-nvim";
+	    flake = false;
+	};
     };
 
     outputs = { nixpkgs, ... }@inputs:
