@@ -2,9 +2,10 @@
 
 {
     imports = [ 
-        ./shell 
         ./dev
         ./design
+        ./neovim
+        ./shell 
         ./update_collect-garbage.nix
     ];
 

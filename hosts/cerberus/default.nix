@@ -20,7 +20,7 @@ nixpkgs.lib.nixosSystem {
         home-manager.nixosModules.home-manager
         ({ config, pkgs, lib, ... }: {
             system.stateVersion = "25.11";
-	    home-manager.sharedModules = [ nixvim.homeManagerModules.nixvim ];
+	    home-manager.sharedModules = [ nixvim.homeModules.nixvim ];
             networking = {
                 hostName = "cerberus";
                 # TODO: make tailscale integration more declarative?
