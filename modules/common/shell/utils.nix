@@ -45,6 +45,7 @@ in {
                 openssl     # Cryptographic tools
                 libargon2   # argon2 hash tool
                 opentofu    # Terraform-compatible
+                pwgen	    # Password generator
             ];
 
             programs.zoxide.enable = true; # Shortcut jump command
