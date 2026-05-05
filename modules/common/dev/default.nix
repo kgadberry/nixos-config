@@ -7,6 +7,7 @@
         ./java.nix
         ./nodejs.nix
         ./agents.nix
+        ./neovim.nix
     ];
 
     config.home-manager.users.${config.user}.programs.zsh.shellAliases = {
