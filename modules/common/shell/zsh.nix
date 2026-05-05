@@ -1,3 +1,4 @@
+# zsh shell configuration, including setting up the shell environment and options
 { config, pkgs, ... }:
 
 {

@@ -1,19 +1,7 @@
-{ config, pkgs, inputs, ... }:
-
-{
-    home-manager.users.${config.user} = {
-        programs.nixvim = {
-            imports = [
-                    ./config
-                ];
-
-                enable = true;
-        };
-
-        home.sessionVariables = {
-            EDITOR = "nvim";
-       };
-
-    };
-
+{ lib, ... }: {
+    imports = let
+        defs = lib.attrNames (lib.filterAttrs
+            (n: k: n != "default.nix" && k == "regular")
+            (builtins.readDir ./.));
+    in map (f: ./${f}) defs;
 }

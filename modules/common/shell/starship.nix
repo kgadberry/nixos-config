@@ -1,3 +1,4 @@
+# starship prompt configuration
 { config, pkgs, lib, ... }: {
 
     home-manager.users.${config.user} = {

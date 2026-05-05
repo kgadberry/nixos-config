@@ -1,3 +1,4 @@
+# sets up LD_LIBRARY_PATH for dynamically linked applications
 { config, pkgs, lib, ... }:
 
 {

@@ -1,3 +1,4 @@
+# utility tools and common configurations, each split into a separate file in utils/
 { lib, pkgs, config, ... }:
 
 let

@@ -1,3 +1,4 @@
+# git integration in the shell
 { config, pkgs, lib, ... }:
 
 {

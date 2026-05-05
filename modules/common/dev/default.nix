@@ -1,15 +1,11 @@
-{ config, ... }: {
-
-    imports = [        
+{ ... }: {
+    imports = [
+        ./agents.nix
         ./cpp.nix
         ./embedded.nix
-        ./python.nix
         ./java.nix
         ./nodejs.nix
-        ./agents.nix
+        ./python.nix
+        ./shell.nix
     ];
-
-    config.home-manager.users.${config.user}.programs.zsh.shellAliases = {
-        kdevshell = "nix develop nixos-config -c zsh -i";
-    };
 }

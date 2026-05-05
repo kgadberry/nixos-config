@@ -1,3 +1,4 @@
+# direnv integration — automatically loads environment variables based on the current directory
 { config, ... }: {
 
     home-manager.users.${config.user}.programs.direnv = {

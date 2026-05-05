@@ -1,20 +1,7 @@
-{ config, pkgs, lib, ... }:
-
-{
-    config = lib.mkIf (pkgs.stdenv.isLinux && config.wsl.enable) {
-        
-        # Replace config directory with our repo, since it sources from config on every launch
-        system.activationScripts.configDir.text = ''
-            rm -rf /etc/nixos
-            ln --symbolic --no-dereference --force ${config.dotfilesPath} /etc/nixos
-        '';
-
-        # Enable usbip
-        wsl.usbip.enable = true;
-
-        # usbipd HOWTO from admin powershell:
-        # -  usbipd list
-        # -  usbipd bind --busid #-#
-        # -  usbipd attach --wsl --busid #-#
-    };
+{ lib, ... }: {
+    imports = let
+        defs = lib.attrNames (lib.filterAttrs
+            (n: k: n != "default.nix" && (k == "regular" || k == "directory"))
+            (builtins.readDir ./.));
+    in map (f: ./${f}) defs;
 }
