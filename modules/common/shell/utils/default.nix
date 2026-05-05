@@ -21,19 +21,14 @@ let
 
     fragments = map (file: import ./${file} { inherit pkgs lib ignorePatterns; }) definitions;
 
-    merged = lib.foldl' (acc: frag: lib.recursiveUpdate acc frag) {} fragments;
+    toUserCfg = frag: {
+        home.packages = frag.packages or [];
+        home.file = frag.homeFiles or {};
+        home.sessionVariables = frag.sessionVariables or {};
+        home.shellAliases = frag.shellAliases or {};
+        programs = frag.programs or {};
+    };
 in
 {
-    config = let
-        userCfg = {
-            home.packages = merged.packages or [];
-            home.file = merged.homeFiles or {};
-            home.sessionVariables = merged.sessionVariables or {};
-            home.shellAliases = merged.shellAliases or {};
-            programs = merged.programs or {};
-        };
-    in {
-        home-manager.users.${config.user} = lib.mkMerge [ userCfg ];
-    };
+    config.home-manager.users.${config.user} = lib.mkMerge (map toUserCfg fragments);
 }
-

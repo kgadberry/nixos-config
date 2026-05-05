@@ -4,8 +4,10 @@
     packages = with pkgs; [
         age
         bc
+        broot
         delta
         dos2unix
+        home-manager
         inetutils
         neofetch
         nmap

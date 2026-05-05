@@ -1,6 +1,9 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-    programs.dig.enable = true;
-    programs.digrc = "+noall +answer";
+    packages = with pkgs; [
+        dig
+    ];
+
+    homeFiles.".digrc".text = "+noall +answer";
 }

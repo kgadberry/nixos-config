@@ -1,6 +1,9 @@
-{ ignorePatterns, ... }:
+{ ignorePatterns, pkgs, ... }:
 
 {
-    programs.ripgrep.enable = true;
-    programs.rgignore = ignorePatterns;
+    packages = with pkgs; [
+        ripgrep
+    ];
+
+    homeFiles.".rgignore".text = ignorePatterns;
 }

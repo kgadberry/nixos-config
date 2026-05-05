@@ -13,6 +13,7 @@ Use these rules for any change to host definitions, modules, options, or flake w
 - Put Linux system behavior in modules/nixos.
 - Put WSL-specific behavior in modules/wsl.
 - Keep hosts/<name>/default.nix focused on host-local composition and overrides.
+- When creating module imports prefer file aggregation over explicit references.
 
 ## Naming and Style Rules
 
@@ -22,7 +23,7 @@ Use these rules for any change to host definitions, modules, options, or flake w
 - Use 4-space indentation.
 - Use explicit multiline imports in default.nix aggregators.
 - Keep comments short and purpose-driven.
-- Grandfathered exception: modules/common/update_collect-garbage.nix.
+    - # comments should look like this, with one leading space. the first letter of each sentence should be lowercase.
 
 ## Module Authoring Procedure
 

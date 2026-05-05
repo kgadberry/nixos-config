@@ -6,7 +6,6 @@
     programs.zsh.enable = true;
     
     home-manager.users.${config.user} = {
-        
         # zsh packages
         home.packages = with pkgs; [
             zsh

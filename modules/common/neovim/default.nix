@@ -2,13 +2,13 @@
 
 {
     home-manager.users.${config.user} = {
-	programs.nixvim = {
-	    imports = [
-                ./config
-            ];
+        programs.nixvim = {
+            imports = [
+                    ./config
+                ];
 
-            enable = true;
-	};
+                enable = true;
+        };
 
         home.sessionVariables = {
             EDITOR = "nvim";
