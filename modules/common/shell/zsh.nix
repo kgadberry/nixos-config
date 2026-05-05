@@ -35,8 +35,6 @@
                 q = "exit";
                 z = "zed";
                 hm = "home-manager";
-                cat = "bat";
-                ls = "eza";
 
                 dir = "dir --color=auto";
                 vdir = "vdir --color=auto";

@@ -2,6 +2,8 @@
 
     environment.systemPackages = with pkgs; [
         libfido2
+        openssl
+        libargon2
     ];
 
     security.pam.u2f.enable = true;
