@@ -10,9 +10,6 @@
         };
     };
 
-    # use bat as pager for git diff
-    programs.git.settings.pager.diff = "bat --diff";
-
     # shadow tail and pipe it into bat for log highlighting
     programs.zsh.initContent = ''
         tail() {
@@ -21,8 +18,9 @@
     '';
 
     shellAliases = {
-        cat = "bat";
-        catp = "bat --plain";
+        pcat = "bat";
+        cat = "bat --plain";
+        diff = "batdiff";
         rg = "batgrep";
     };
 
@@ -36,5 +34,6 @@
     packages = with pkgs; [
         bat-extras.batgrep
         bat-extras.prettybat
+        bat-extras.batdiff
     ];
 }

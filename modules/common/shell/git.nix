@@ -25,6 +25,7 @@
 
             programs.git = {
                 enable = true;
+                delta.enable = true;
                 settings = {
                     user = {
                         name = config.gitName;
